@@ -353,49 +353,79 @@
 </main>
   <script>
 
-    const container = document.querySelector(".container");
 
-    /* FLOATING CIRCLES */
-    for (let i = 0; i < 25; i++) {
+// Create enhanced sparkles
+setInterval(() => {
+  const container = document.querySelector('.container');
+  const sparkle = document.createElement('div');
+  sparkle.className = 'sparkle';
+  sparkle.innerHTML = ['✨', '⭐', '💫', '🌟', '⚡'][Math.floor(Math.random() * 5)];
+  sparkle.style.left = Math.random() * 100 + '%';
+  sparkle.style.top = Math.random() * 100 + '%';
+  sparkle.style.fontSize = (Math.random() * 15 + 12) + 'px';
+  container.appendChild(sparkle);
+  setTimeout(() => sparkle.remove(), 2500);
+}, 400);
 
-      let circle = document.createElement("div");
-      circle.className = "circle";
+// Create shiny bubbles
+setInterval(() => {
+  const container = document.querySelector('.container');
+  const bubble = document.createElement('div');
+  bubble.className = 'bubble';
+  const size = Math.random() * 25 + 10;
+  bubble.style.width = size + 'px';
+  bubble.style.height = size + 'px';
+  bubble.style.left = Math.random() * 100 + '%';
+  bubble.style.setProperty('--drift', (Math.random() * 80 - 40) + 'px');
+  bubble.style.animationDuration = (Math.random() * 4 + 5) + 's';
+  container.appendChild(bubble);
+  setTimeout(() => bubble.remove(), 8000);
+}, 500);
 
-      let size = Math.random() * 80 + 20;
+// Create shooting stars
+setInterval(() => {
+  const container = document.querySelector('.container');
+  const star = document.createElement('div');
+  star.className = 'shooting-star';
+  star.style.left = Math.random() * 80 + '%';
+  star.style.top = Math.random() * 60 + '%';
+  const moveX = Math.random() * 350 + 200;
+  const moveY = Math.random() * 180 + 100;
+  star.style.setProperty('--move-x', moveX + 'px');
+  star.style.setProperty('--move-y', moveY + 'px');
+  star.style.setProperty('--move-x-end', (moveX + 100) + 'px');
+  star.style.setProperty('--move-y-end', (moveY + 80) + 'px');
+  container.appendChild(star);
+  setTimeout(() => star.remove(), 2000);
+}, 4000);
 
-      circle.style.width = size + "px";
-      circle.style.height = size + "px";
+// Create glowing orbs
+for(let i = 0; i < 8; i++) {
+  const orb = document.createElement('div');
+  orb.className = 'glow-orb';
+  const size = Math.random() * 200 + 100;
+  orb.style.width = size + 'px';
+  orb.style.height = size + 'px';
+  orb.style.left = Math.random() * 100 + '%';
+  orb.style.top = Math.random() * 100 + '%';
+  orb.style.animationDelay = Math.random() * 5 + 's';
+  orb.style.animationDuration = (Math.random() * 5 + 4) + 's';
+  document.querySelector('.container').appendChild(orb);
+}
 
-      circle.style.left = Math.random() * 100 + "%";
+// Create lens flare
+const lensFlare = document.createElement('div');
+lensFlare.className = 'lens-flare';
+document.querySelector('.container').appendChild(lensFlare);
+</script>
 
-      circle.style.animationDuration = (Math.random() * 10 + 10) + "s";
 
-      container.appendChild(circle);
 
-    }
 
-    /* SPARKLES */
 
-    for (let i = 0; i < 60; i++) {
-
-      let sparkle = document.createElement("div");
-
-      sparkle.className = "sparkle";
-      sparkle.innerHTML = "✦";
-
-      sparkle.style.left = Math.random() * 100 + "%";
-      sparkle.style.top = Math.random() * 100 + "%";
-
-      sparkle.style.fontSize = (Math.random() * 20 + 10) + "px";
-
-      sparkle.style.animationDelay = Math.random() * 3 + "s";
-
-      container.appendChild(sparkle);
-
-    }
     
-
-  </script>
+    
+  
 
 </body>
 
