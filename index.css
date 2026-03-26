@@ -944,11 +944,9 @@ img {
     width: 260px;
     border-radius: 35px;
   }
-  /* ... rest of existing code ... */
 }
 
 @media (max-width: 480px) {
-  /* ... existing code ... */
   #Skills {
     padding-top: 130px;
     gap: 30px;
@@ -966,11 +964,9 @@ img {
     width: 220px;
     border-radius: 30px;
   }
-  /* ... rest of existing code ... */
 }
 
 @media (max-width: 380px) {
-  /* ... existing code ... */
   #Skills {
     padding-top: 120px;
   }
@@ -979,5 +975,5 @@ img {
     height: 160px;
     border-radius: 25px;
   }
-  /* ... rest of existing code ... */
+  
 }
